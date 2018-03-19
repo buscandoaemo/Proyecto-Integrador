@@ -1,118 +1,128 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Boarding House Snow & Skate</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/formulario.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+  <title>The Boarding House Snow & Skate</title>
+  <meta charset="utf-8">
+  <meta lang="es-ar">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <link href="css/estilos.css" rel="stylesheet" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet">
+  <link id="favicon" rel="shortcut icon" href="img/favicon.png" type="image/png" />
 </head>
 <body>
-    
-   <!--        Header         -->
-        <div class="header">
-            <div class="logo"><a href="index.html"><img src="./images/Logo.png" alt=""></a></div>
-            <nav>
-                <ul class="botonera">
-                        <li><a href="index.html">Hombre</a></li>
-                        <li><a href="index.html">Mujer</a></li>
-                        <li><a href="index.html">Niños</a></li>
-                        <li><a href="ofertas.html">Ofertas</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href=""><i class="icono fas fa-shopping-cart"></i>Carro</a></li>
-                        <li class="login"><a href="">Iniciar Sesión</a></li>
-                        <li class="login"><a href="registrarse.html">Registrarse</a></li>
-                    </ul>
-                </nav>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="The Boarding House Snow & Skate"/></a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="registro.html">Registrarse</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li class="cart"><a href="login.html"><i class="icono fas fa-shopping-cart"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Fin Header -->
+
+    <!-- Contenido -->
+    <div class="sub-container">
+      <!-- Item -->
+      <article>
+        <div class="contenedor-producto">
+          <div class="producto-side1">
+            <img src="img/casco.jpg" alt="Casco">
+          </div>
+          <div class="producto-side2">
+            <h3>Cascos</h3>
+            <p>Varios modelos con sus accesorios correspondientes</p>
+            <div class="botones">
+              <a href="#"><i class="fas fa-shopping-cart"></i> Comprar</a>
+              <a href="#">Ver más</a>
+            </div>
+          </div>
         </div>
+      </article>
 
-    <!--        Producto Principal         -->
-        <div class="producto-contenedor 1">
-            <div class="producto-side1"><img  src="./images/casco.jpg" alt=""></div>
-            <div class="producto-side2"> 
-                <div class="titulo-card">CASCOS</div>
-                <div class="contenido-card">Varios modelos con sus accesorios correspondientes</div>
-                <div class="botones">
-                    <button class="btn btn-comprar">Ver modelos</button>
-                </div>    
+      <!-- Item -->
+      <article>
+        <div class="contenedor-producto">
+          <div class="producto-side1">
+            <img src="img/tabla.jpg" alt="Casco">
+          </div>
+          <div class="producto-side2 order-1">
+            <h3>Tablas</h3>
+            <p>Las ultimas tablas en un solo lugar</p>
+            <div class="botones">
+              <a href="#"><i class="fas fa-shopping-cart"></i> Comprar</a>
+              <a href="#">Ver más</a>
             </div>
+          </div>
         </div>
-        
-    <!--        Segundo Producto          -->
-    <div class="producto-contenedor 2">
-            <div class="producto-side2" id="ladoA"> 
-                    <div class="titulo-card">TABLAS</div>
-                    <div class="contenido-card">Las ultimas tablas en un solo lugar</div>
-                    <div class="botones">
-                        <button class="btn btn-comprar">COMPRAR</button>
-                        <button class="btn btn-producto">Ver más</button>
-                    </div>   
-                </div>
-            <div class="producto-side1" id="ladoB"><img  src="./images/tabla1.jpg" alt=""></div>
+      </article>
 
-
-
+      <!-- Item -->
+      <article>
+        <div class="contenedor-producto">
+          <div class="producto-side1">
+            <img src="img/gopro.jpg" alt="Casco">
+          </div>
+          <div class="producto-side2">
+            <h3>Accesorios</h3>
+            <p>Todos los accesorios necesarios para ir a la montaña</p>
+            <div class="botones">
+              <a href="#"><i class="fas fa-shopping-cart"></i> Comprar</a>
+              <a href="#">Ver más</a>
+            </div>
+          </div>
         </div>
-        
-    <!--        Tercer Principal         -->
-    <div class="producto-contenedor 3">
-            <div class="producto-side1"><img  src="./images/gopro.jpeg" alt=""></div>
-            <div class="producto-side2"> 
-                <div class="titulo-card">ACCESORIOS</div>
-                <div class="contenido-card">Todos los accesorios necesarios para ir a la montaña</div>
-                <div class="botones">
-                    <button class="btn btn-comprar">COMPRAR</button>
-                    <button class="btn btn-producto">Ver más</button>
-                </div>   
-           
-            </div>
-    </div>        
+      </article>
 
-    <!--        Nuestras Marcas         -->
-    <div class="nuestras-marcas"><a>Nuestras Marcas:</a></div>
-    <div class="nuestras-marcas-logo">
-            <div class="fila-marcas">
-                <img src="./images/burton.png" alt="Burton Logo" class="logo">
-                <img src="./images/ripcurl.png" alt="Rip Curl Logo" class="logo">
-                <img src="./images/vans.png" alt="Vans Logo" class="logo">
-                <img src="./images/volcom.png" alt="Volcom Logo" class="logo">                
-            </div>
-            <div class="fila-marcas">
-                <img src="./images/gopro.png" alt="Go Pro Logo" class="logo">
-                <img src="./images/quicksilver.png" alt="Quick Silver Logo" class="logo">
-                <img src="./images/patagonia.png" alt="Vans Logo" class="logo">
-                <img src="./images/oakley.png" alt="Volcom Logo" class="logo">
-            </div>
-            <div class="fila-marcas">
-                <img src="./images/skullcandy.png" alt="Burton Logo" class="logo">
-                <img src="./images/ripcurl.png" alt="Rip Curl Logo" class="logo">
-                <img src="./images/salomon.jpg" alt="Vans Logo" class="logo">
-                <img src="./images/oneill.png" alt="Volcom Logo" class="logo">
-            </div>
-    </div>  
-
-    <!--        Footer         -->
-    <div class="header">
-            <div class="logo"><img src="./images/Logo.png" alt=""></div>
-            <nav>
-                <ul class="botonera">
-                        <li>Tienda</li>
-                        <li>Ofertas</li>
-                        <li>FAQ</li>
-                        <li>Contacto</li>
-                        <li><i class="icono fas fa-shopping-cart"></i>Carrito</li>
-                    </ul>
-                </nav>
+      <!-- Marcas -->
+      <div class="subtitulo">
+        <h2>Nuestras marcas</h2>
+      </div>
+      <div class="marcas">
+        <div class="fila-marcas">
+          <img src="img/logo-burton.png" alt="Burton" class="marca">
+          <img src="img/logo-ripcurl.png" alt="Rip Curl" class="marca">
+          <img src="img/logo-vans.png" alt="Vans" class="marca">
+          <img src="img/logo-volcom.png" alt="Volcom" class="marca">
         </div>
+        <div class="fila-marcas">
+          <img src="img/logo-gopro.png" alt="Go Pro" class="marca">
+          <img src="img/logo-quicksilver.png" alt="Quick Silver" class="marca">
+          <img src="img/logo-patagonia.png" alt="Patagonia" class="marca">
+          <img src="img/logo-oakley.png" alt="Oakley" class="marca">
+        </div>
+        <div class="fila-marcas">
+          <img src="img/logo-skullcandy.png" alt="Skullcandy" class="marca">
+          <img src="img/logo-dc.png" alt="DC" class="marca">
+          <img src="img/logo-salomon.png" alt="Salomon" class="marca">
+          <img src="img/logo-oneill.png" alt="Oneill" class="marca">
+        </div>
+      </div>
+    </div>
 
+    <!-- Fin Contenido -->
 
-
-    
+    <!-- Footer -->
+    <footer>
+      <div class="footer-side1">
+        <a href="index.html" class="logo"><img src="img/logo-blanco.png" alt="The Boarding House Snow & Skate"/></a>
+        <p>© 2018. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-side2">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- Fin Footer -->
+  </div>
 </body>
 </html>
-
