@@ -1,3 +1,46 @@
+<?php
+
+	include('./php/funciones.php');
+
+	session_start();
+
+	if (existeParametro('usuario',$_SESSION)) {
+		header("Location: perfil.php");
+		exit;
+	}
+
+	$email = valorParametro('email',$_POST);
+	$password = valorParametro('password',$_POST);
+	$infoUsuario = [];
+	$error = false;
+	$passwordError = false;
+
+	if (existeParametro('submit', $_POST)) {
+		if($email && $password) {
+			$infoUsuario = infoUsuario($email);
+			if ($infoUsuario['existe']) {
+				if (password_verify($password, $infoUsuario['usuario']['password'] )) {
+					$_SESSION['usuario'] = $infoUsuario['usuario'];
+					if (existeParametro('recordarusuario', $_POST)) {
+						setcookie('email',$email);
+					} else {
+						setcookie('email',$email, time()-3600);
+					}
+					header("Location: perfil.php");
+					exit;
+				} else {
+					$error = true;
+					$passwordError = true;
+				}
+			} else {
+				$error = true;
+			}
+		} else {
+			$error = true;
+		}
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +56,7 @@
 <body>
   <div class="container">
     <!-- Incluir Header por PHP -->
-    <?php  include ("./php/header.php"); ?> 
+    <?php  include ("./php/header.php"); ?>
 
     <!-- Contenido -->
     <div class="sub-container">
@@ -26,13 +69,23 @@
       <!-- formulario -->
       <div class="modulo-form login">
         <div class="formulario">
-          <form action="" method="">
-            <input type="text" name="usuario" value="" placeholder="Usuario" required>
-            <input type="password" name="password" value="" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-
-            <a href="#">Recordar usuario</a>
-            <a href="#">Recordar contraseña</a>
+          <form method="POST">
+            <?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
+              <span class="error errorusuario"><i class="fas fa-exclamation-triangle"></i> Usuario no registrado</span>
+            <?php endif; ?>
+            <?php if($error && $passwordError): ?>
+              <span class="error errorusuario"><i class="fas fa-exclamation-triangle"></i> Contraseña incorrecta</span>
+            <?php endif; ?>
+            <?php if($error && !$email):?>
+      				<span class="error"> <i class="fas fa-exclamation-triangle"></i> Ingresar un email</span>
+      			<?php endif; ?>
+            <input type="email" name="email" value="<?= existeParametro('email', $_COOKIE) ? valorParametro('email', $_COOKIE) : $email ?>" class="<?= ($error && !$email) ? 'error':null ?>" placeholder="Email">
+            <?php if($error && !$password):?>
+      				<span class="error"><i class="fas fa-exclamation-triangle"></i> Ingresar una contraseña</span>
+      			<?php endif; ?>
+            <input type="password" name="password" value="" class="<?= ($error && !$password) ? 'error':null ?>"  placeholder="Contraseña">
+						<label for="recordarusuario"><input type="checkbox" name="recordarusuario" value="recordar"><span class="ref">Recordar usuario</span></label>
+            <button type="submit" name="submit">Ingresar</button>
           </form>
         </div>
       </div>

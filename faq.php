@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,7 @@
 <body>
   <div class="container">
     <!-- Incluir Header por PHP -->
-    <?php  include ("./php/header.php"); ?> 
+    <?php  include ("./php/header.php"); ?>
 
     <!-- Contenido -->
     <div class="sub-container">

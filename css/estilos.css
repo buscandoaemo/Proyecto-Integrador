@@ -106,6 +106,9 @@ nav ul li a.active {
 li.cart {
 	display: none;
 }
+li i.iconuser {
+	display: none;
+}
 .sub-container {
 	padding:7.625em 0 0;
 }
@@ -205,6 +208,10 @@ img.marca {
 .login {
 	background-image: url(../img/fnd-login.jpg);
 }
+.trama {
+	background-image: url(../img/fnd-perfil.jpg);
+	background-size: auto;
+}
 .formulario {
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 2em;
@@ -229,8 +236,15 @@ img.marca {
 	padding:0.3em;
 	margin-bottom: 1em;
 	border-radius: 3px;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
 	color: #1f191a;
+}
+.formulario form input.error {
+	border: 1px rgb(168, 18, 88) solid;
+}
+.formulario form input.file {
+	letter-spacing: 0;
+	font-size: 0.8em;
 }
 .formulario form button {
 	font-family: 'Raleway', sans-serif;
@@ -256,6 +270,50 @@ img.marca {
 .formulario form a:hover {
 	color: #1f191a;
 }
+span.ref {
+	font-size: 0.8em;
+	padding-left: 5px;
+}
+span.error {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	color: rgb(168, 18, 88);
+	font-size: 0.7em;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+span.errorusuario {
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	border: 1px rgb(168, 18, 88) solid;
+	border-radius: 3px;
+	padding: 5px;
+}
+.perfil {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 85px;
+    padding-top: 95px;
+}
+.perfil .avatar {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #000;
+	margin: 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	border: 5px #DDD solid;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	top: -120px;
+}
 .contenedor-preguntas {
 	background-color: #F5F5F5;
 	display: flex;
@@ -268,6 +326,7 @@ img.marca {
 	flex-direction: column;
 	align-content: space-between;
 	margin-bottom: 2em;
+	width: 100%;
 }
 .pregunta .side1 {
 	display: flex;
@@ -332,10 +391,40 @@ footer a img {
 .footer-side2 ul li {
 	margin: 0 8px;
 }
+.custom-file-input::-webkit-file-upload-button {
+ visibility: hidden;
+}
+.custom-file-input::before {
+    box-sizing: border-box;
+    content: 'Foto de perfil';
+    letter-spacing: 0;
+    font-size: 0.8em;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+}
+.custom-file-input:hover::before {
+	border-color: rgb(168, 18, 88);
+	color: rgb(168, 18, 88);
+}
+.custom-file-input:active::before {
+ background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
 	li.cart {
 		display: block;
+	}
+	li i.iconuser {
+		display: inline-block;
 	}
 }
 
