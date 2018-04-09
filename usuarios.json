@@ -1,0 +1,24 @@
+{
+    "usuarios": [
+        {
+            "nombre": "d",
+            "apellido": "d",
+            "email": "doefz123@hotmail.com",
+            "password": "123456789",
+            "domicilio": "dddd",
+            "localidad": "www",
+            "id": 2,
+            "imagen": ".\/img\/avatar\/perfil_1523277734.jpg"
+        },
+        {
+            "nombre": "ray",
+            "apellido": "salom",
+            "email": "rayjesu0253@gmail.com",
+            "password": "pepe33",
+            "domicilio": "pepe",
+            "localidad": "pepe",
+            "id": 3,
+            "imagen": ".\/img\/avatar\/perfil_1523305894.jpg"
+        }
+    ]
+}
