@@ -1,44 +1,14 @@
 {
     "usuarios": [
         {
-            "nombre": "d",
-            "apellido": "d",
-            "email": "doefz123@hotmail.com",
-            "password": "123456789",
-            "domicilio": "dddd",
-            "localidad": "www",
-            "id": 2,
-            "imagen": ".\/img\/avatar\/perfil_1523277734.jpg"
-        },
-        {
-            "nombre": "ray",
-            "apellido": "salom",
-            "email": "rayjesu0253@gmail.com",
-            "password": "pepe33",
-            "domicilio": "pepe",
-            "localidad": "pepe",
-            "id": 3,
-            "imagen": ".\/img\/avatar\/perfil_1523305894.jpg"
-        },
-        {
-            "nombre": "aaaaaa",
-            "apellido": "aaaaaa",
-            "email": "aaaaaa@q.com",
-            "password": "11",
-            "domicilio": "aaaaaa",
-            "localidad": "aaaaaa",
-            "id": 4,
-            "imagen": ".\/img\/avatar\/perfil_1523315218.png"
-        },
-        {
-            "nombre": "bb",
-            "apellido": "bb",
-            "email": "bb@b",
-            "password": "$2y$10$Nq0v6iGRt34Um6VhcaEPTe7SKFnPqerzeXp90.2FsseUSMeNsXHHm",
-            "domicilio": "bb",
-            "localidad": "bb",
-            "id": 5,
-            "imagen": ".\/img\/avatar\/perfil_1523315374.png"
+            "nombre": "Emanuel",
+            "apellido": "Ferreyra",
+            "email": "buscandoaemo@gmail.com",
+            "password": "$2y$10$IMKtdnme0lYSqVQgJTu6GuY9rnS8a0fW0nzIhT7sqpgUfzuUqzrrm",
+            "domicilio": "Calle falsa 123",
+            "localidad": "Ciudad Autonoma de Buenos Aires",
+            "id": 1,
+            "imagen": ".\/img\/avatar\/perfil_1523182603.jpg"
         }
     ]
 }

@@ -5,7 +5,6 @@
 	session_start();
 
 	if (existeParametro('usuario',$_SESSION)) {
-
 		header("Location: perfil.php");
 		exit;
 	}
@@ -21,7 +20,6 @@
 	$error = false;
 
 	if (existeParametro('submit', $_POST)) {
-
 		if ($nombre && $apellido && $email && $password && $domicilio && $localidad && $existeFile) {
 			$infoUsuario = infoUsuario($email);
 			if ($infoUsuario['existe']) {
@@ -31,7 +29,7 @@
 					'nombre'=>$nombre,
           'apellido'=>$apellido,
 					'email' => $email,
-					'password' => password_hash($password,PASSWORD_DEFAULT) ,
+					'password' => password_hash($password,PASSWORD_DEFAULT),
 					'domicilio' => $domicilio,
 					'localidad' => $localidad,
 					'id' => $infoUsuario['proximoId']+1,
@@ -44,6 +42,7 @@
 			$error = true;
 		}
 	}
+
 ?>
 <!DOCTYPE html>
 <html>

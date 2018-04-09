@@ -19,14 +19,12 @@
 		if($email && $password) {
 			$infoUsuario = infoUsuario($email);
 			if ($infoUsuario['existe']) {
-				if ($password== $infoUsuario['usuario']['password'] ) {
+				if (password_verify($password, $infoUsuario['usuario']['password'] )) {
 					$_SESSION['usuario'] = $infoUsuario['usuario'];
 					if (existeParametro('recordarusuario', $_POST)) {
 						setcookie('email',$email);
-						setcookie('password',$password);
 					} else {
 						setcookie('email',$email, time()-3600);
-						setcookie('password',$password, time()-3600);
 					}
 					header("Location: perfil.php");
 					exit;
@@ -85,10 +83,8 @@
             <?php if($error && !$password):?>
       				<span class="error"><i class="fas fa-exclamation-triangle"></i> Ingresar una contraseña</span>
       			<?php endif; ?>
-            <input type="password" name="password" value="<?= existeParametro('password', $_COOKIE) ? valorParametro('password', $_COOKIE) : $password ?>" class="<?= ($error && !$password) ? 'error':null ?>"  placeholder="Contraseña">
+            <input type="password" name="password" value="" class="<?= ($error && !$password) ? 'error':null ?>"  placeholder="Contraseña">
 						<label for="recordarusuario"><input type="checkbox" name="recordarusuario" value="recordar"><span class="ref">Recordar usuario</span></label>
-						<a href="olvide_contrasena.php">olvide mi contraseña</a>
-						<a href="registro.php">crear usuario</a>
             <button type="submit" name="submit">Ingresar</button>
           </form>
         </div>

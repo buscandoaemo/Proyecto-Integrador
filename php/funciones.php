@@ -71,7 +71,6 @@
 	}
 
 	function guardarUsuario($usuario) {
-
 		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
 		if (is_null($usuarios)) {
 			$usuarios = ['usuarios' => []];
@@ -79,19 +78,7 @@
 
 		$usuarios['usuarios'][] = $usuario;
 
-		file_put_contents('usuarios.json',json_encode($usuarios, JSON_PRETTY_PRINT));
-	}
-	function cambioClave($email, $pass)
-	{
-		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		foreach ($usuarios['usuarios'] as $key => $u) {
-			if ($email == $u['email'] ) {
-				$usuarios['usuarios'][$key]['password'] = password_hash($pass,PASSWORD_DEFAULT);
-				file_put_contents('usuarios.json',json_encode($usuarios, JSON_PRETTY_PRINT));
-				return $u;
-			}
-		}
-		return false;
+		file_put_contents('usuarios.json', json_encode($usuarios,JSON_PRETTY_PRINT));
 	}
 
 ?>
