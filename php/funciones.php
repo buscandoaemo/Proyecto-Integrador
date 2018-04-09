@@ -86,7 +86,7 @@
 		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
 		foreach ($usuarios['usuarios'] as $key => $u) {
 			if ($email == $u['email'] ) {
-				$usuarios['usuarios'][$key]['password'] = $pass;
+				$usuarios['usuarios'][$key]['password'] = password_hash($pass,PASSWORD_DEFAULT);
 				file_put_contents('usuarios.json',json_encode($usuarios, JSON_PRETTY_PRINT));
 				return $u;
 			}

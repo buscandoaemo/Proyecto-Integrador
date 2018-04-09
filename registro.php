@@ -31,7 +31,7 @@
 					'nombre'=>$nombre,
           'apellido'=>$apellido,
 					'email' => $email,
-					'password' => $password ,
+					'password' => password_hash($password,PASSWORD_DEFAULT) ,
 					'domicilio' => $domicilio,
 					'localidad' => $localidad,
 					'id' => $infoUsuario['proximoId']+1,
