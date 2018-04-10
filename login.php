@@ -84,7 +84,7 @@
       				<span class="error"><i class="fas fa-exclamation-triangle"></i> Ingresar una contraseña</span>
       			<?php endif; ?>
             <input type="password" name="password" value="" class="<?= ($error && !$password) ? 'error':null ?>"  placeholder="Contraseña">
-						<label for="recordarusuario"><input type="checkbox" name="recordarusuario" value="recordar"><span class="ref">Recordar usuario</span></label>
+						<label for="recordarusuario"><input type="checkbox" name="recordarusuario" value="recordar" <?= existeParametro('email', $_COOKIE) ? 'checked' : null ?>><span class="ref">Recordar usuario</span></label>
             <button type="submit" name="submit">Ingresar</button>
           </form>
         </div>
