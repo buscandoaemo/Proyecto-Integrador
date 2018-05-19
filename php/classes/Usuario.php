@@ -13,7 +13,7 @@ namespace usuario;
   private $avatarUrl;
 
 
-  public function __constructor($nombre,
+  public function __construct($nombre,
    $apellido,
    $email,
    $password,
