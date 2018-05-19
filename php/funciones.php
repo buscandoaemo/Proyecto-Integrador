@@ -72,13 +72,30 @@
 
 	function guardarUsuario($usuario) {
 		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		if (is_null($usuarios)) {
-			$usuarios = ['usuarios' => []];
-		}
+		// if (is_null($usuarios)) {
+		// 	$usuarios = ['usuarios' => []];
+		// }
+    //
+		// $usuarios['usuarios'][] = $usuario;
+    //
+		// file_put_contents('usuarios.json', json_encode($usuarios,JSON_PRETTY_PRINT));
 
-		$usuarios['usuarios'][] = $usuario;
+		//guardar en la base Mysql el usuarios
 
-		file_put_contents('usuarios.json', json_encode($usuarios,JSON_PRETTY_PRINT));
+           //crear instancia de MysqlManager
+
+					//crear conexion a la base
+
+
+					//creas la consulta
+
+
+					//ejecutar la consulta, hago el insert
+
+
+					//cerras la conexion
+
+		//
 	}
 
 ?>
