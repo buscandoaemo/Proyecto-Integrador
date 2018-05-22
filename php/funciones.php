@@ -20,32 +20,13 @@
 	}
 
 	function infoUsuario($email) {
-		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		if (is_null($usuarios)) {
-			$usuarios = ['usuarios' => []];
-		}
+		$usuario = Usuario::findEmail($email);
+		if ($usuario->email == $email) {
+			return ['existe' => true];
+		} else {
+			return ['existe' => false];
+		};
 
-		$existe = false;
-		$posicion = null;
-		$usuarioEncontrado = null;
-		$proximoId = 0;
-
-		foreach ($usuarios['usuarios'] as $indice => $usuario) {
-			if ($usuario['email'] == $email) {
-				$existe = true;
-				$posicion = $indice;
-				$usuarioEncontrado = $usuario;
-			}
-
-			$proximoId = $proximoId < $usuario['id'] ? $usuario['id']: $proximoId;
-		}
-
-		return [
-			'existe' => $existe,
-			'posicion' => $posicion,
-			'usuario' => $usuarioEncontrado,
-			'proximoId' => $proximoId
-		];
 	}
 
 	function guardarAvatar($nombreDelInputFile) {
@@ -71,31 +52,10 @@
 	}
 
 	function guardarUsuario($usuario) {
-		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		// if (is_null($usuarios)) {
-		// 	$usuarios = ['usuarios' => []];
-		// }
-    //
-		// $usuarios['usuarios'][] = $usuario;
-    //
-		// file_put_contents('usuarios.json', json_encode($usuarios,JSON_PRETTY_PRINT));
+		$nuevodb = new Usuario($usuario);
+		var_dump($usuario);
+		$nuevodb->save();
 
-		//guardar en la base Mysql el usuarios
-
-           //crear instancia de MysqlManager
-
-					//crear conexion a la base
-
-
-					//creas la consulta
-
-
-					//ejecutar la consulta, hago el insert
-
-
-					//cerras la conexion
-
-		//
 	}
 
 ?>
