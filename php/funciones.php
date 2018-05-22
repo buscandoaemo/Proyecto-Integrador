@@ -1,5 +1,7 @@
 <?php
 
+require_once 'classes/Usuario.php';
+
 	function existeParametro($nombre, $arrayDonde) {
 		return array_key_exists($nombre, $arrayDonde);
 	}
