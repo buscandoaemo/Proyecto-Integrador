@@ -1,6 +1,8 @@
 <?php
 
 	include('./php/funciones.php');
+  include('./php/classes/DB.php');
+  include('./php/classes/Usuario.php');
 
 	session_start();
 
@@ -19,7 +21,7 @@
 		if($email && $password) {
 			$infoUsuario = infoUsuario($email);
 			if ($infoUsuario['existe']) {
-				if (password_verify($password, $infoUsuario['usuario']['password'] )) {
+				if (password_verify($password,$infoUsuario['usuario']['password'])) {          
 					$_SESSION['usuario'] = $infoUsuario['usuario'];
 					if (existeParametro('recordarusuario', $_POST)) {
 						setcookie('email',$email);

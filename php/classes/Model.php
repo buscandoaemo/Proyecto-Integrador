@@ -9,8 +9,8 @@ class Model {
 	public static function findEmail($email)
 	{
 		$sql = 'SELECT * FROM '.static::$table.' WHERE email = :email';
-		$stmt = DataBase::getConnection()->prepare($sql);
-		$stmt->bindValue(':email', $email, PDO::PARAM_STR);
+		$stmt = DB::getConn()->prepare($sql);
+		$stmt->bindValue(':email', $email, PDO::PARAM_STR); 
 		$stmt->execute();
 
 		$result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -22,20 +22,32 @@ class Model {
 		return $usuario;
 	}
 
+	public static function infoUsuario($email)
+	{
+		$sql = 'SELECT * FROM '.static::$table.' WHERE email = :email';
+		$stmt = DB::getConn()->prepare($sql);
+		$stmt->bindValue(':email', $email, PDO::PARAM_STR); 
+		$stmt->execute();
+
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		return $result;
+	}
+
 	public function toModel($data)
 	{
 		if (isset($data['id'])) {$this->id = $data['id'];}
 		foreach ($data as $key => $value) {
 			if (in_array($key, $this->fillable)) {
 				$this-> $key = $value;
-			}
+			}	
 		}
 	}
 
 	public function save()
 	{
 		$sql = ($this->id)?$this->update():$this->insert();
-		$stmt = DataBase::getConnection()->prepare($sql);
+		$stmt = DB::getConn()->prepare($sql);
 		foreach ($this->fillable as $column) {
 			$stmt->bindValue(":$column", $this->$column);
 		}

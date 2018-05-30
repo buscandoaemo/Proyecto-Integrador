@@ -1,7 +1,5 @@
 <?php
 
-require_once 'classes/Usuario.php';
-
 	function existeParametro($nombre, $arrayDonde) {
 		return array_key_exists($nombre, $arrayDonde);
 	}
@@ -22,12 +20,25 @@ require_once 'classes/Usuario.php';
 	}
 
 	function infoUsuario($email) {
+
+		$existe = false;
+		$usuarioEncontrado = null;
+		
+
 		$usuario = Usuario::findEmail($email);
 		if ($usuario->email == $email) {
-			return ['existe' => true];
+			$existe = true;
 		} else {
-			return ['existe' => false];
-		};
+			$existe = false;
+		};		
+
+		$usuarioEncontrado = Usuario::infoUsuario($email);
+
+		return [
+			'existe' => $existe,
+			'usuario' => $usuarioEncontrado
+		];
+
 
 	}
 
@@ -51,13 +62,6 @@ require_once 'classes/Usuario.php';
 			move_uploaded_file($tmp, $urlFinalConNombreYExtension);
 			return $urlFinalConNombreYExtension;
 		}
-	}
-
-	function guardarUsuario($usuario) {
-		$nuevodb = new Usuario($usuario);
-		var_dump($usuario);
-		$nuevodb->save();
-
 	}
 
 ?>

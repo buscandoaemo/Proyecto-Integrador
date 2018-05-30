@@ -1,6 +1,6 @@
 <?php
 
-require_once 'DataBase.php';
+require_once 'DB.php';
 require_once 'Model.php';
 
 class Usuario extends Model {
@@ -12,7 +12,7 @@ class Usuario extends Model {
 	public $domicilio;
 	public $localidad;
 	public $imagen;
-
+	
 	public $fillable = ['nombre', 'apellido', 'email', 'password', 'domicilio', 'localidad', 'imagen'];
 	public static $table = 'usuarios';
 }

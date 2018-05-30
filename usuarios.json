@@ -9,16 +9,6 @@
             "localidad": "Ciudad Autonoma de Buenos Aires",
             "id": 1,
             "imagen": ".\/img\/avatar\/perfil_1523182603.jpg"
-        },
-        {
-            "nombre": "Emanuel",
-            "apellido": "Ferreyra",
-            "email": "pepe@argento.com",
-            "password": "$2y$10$Ur5dgSyCiJlzPp8SGl6k.OZyKtWzgO4b\/C9xIN413.V\/jp7JVn2uK",
-            "domicilio": "Sarmiento 2172 9\u00ba 44, Entre Uriburu y Junin",
-            "localidad": "Ciudad Autonoma de Buenos Aires",
-            "id": 2,
-            "imagen": ".\/img\/avatar\/perfil_1527000162.jpeg"
         }
     ]
 }
